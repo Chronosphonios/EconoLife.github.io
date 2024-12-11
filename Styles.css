@@ -1,4 +1,3 @@
-/* Estilos básicos para la página */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -33,7 +32,6 @@ nav a:hover {
     color: lightblue;
 }
 
-/* Contenedor principal */
 main {
     display: flex;
     flex-wrap: wrap;
@@ -41,7 +39,6 @@ main {
     padding: 20px;
 }
 
-/* Estilos para las secciones de contenido */
 .content-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -50,10 +47,10 @@ main {
 }
 
 .content-column, .video-column {
-    width: 48%; /* Ajustar el ancho de las columnas para ocupar menos espacio */
+    width: 48%; 
     box-sizing: border-box;
-    max-height: 600px; /* Limitar la altura para evitar expansión excesiva */
-    overflow-y: auto; /* Permite el desplazamiento vertical si el contenido es demasiado largo */
+    max-height: 600px; 
+    overflow-y: auto; 
 }
 
 h2 {
@@ -74,7 +71,7 @@ hr {
 
 .video-column iframe {
     width: 100%;
-    height: 300px; /* Controlar la altura del video */
+    height: 300px;
     border: none;
 }
 
@@ -84,7 +81,6 @@ hr {
     color: #666;
 }
 
-/* Estilos para los elementos de contenido */
 .content-column {
     flex: 1;
     margin: 10px;
@@ -140,7 +136,6 @@ footer {
     font-size: 14px;
 }
 
-/* Fondo interactivo */
 body {
     background: transparent;
 }
