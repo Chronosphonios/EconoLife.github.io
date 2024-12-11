@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Economía Mundial</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo styles.css -->
+</head>
+
+
+<body>
+    <header>
+        <h1>Economía Mundial</h1>
+    </header>
+
+    <nav>
+        <a href="#bancos">Bancos Centrales</a>
+        <a href="#inflacion">Inflación</a>
+        <a href="#globalizacion">Globalización</a>
+        <a href="#tecnologia">Tecnología Financiera</a>
+    </nav>
+
+    
+    <main>
+        <div class="content-wrapper">
+ <!-- Columna de video -->
+<div class="video-column">
+    <iframe src="https://www.youtube.com/embed/y1DlkFThI3Q" title="Video sobre Bancos Centrales"></iframe>
+    <div class="video-description">
+        <p>Este video ofrece una explicación detallada de cómo los bancos centrales influyen en la economía global y cómo sus políticas pueden afectar tanto a los mercados financieros como a la vida cotidiana de las personas.</p>
+    </div>
+</div>
+
+<!-- Columna de contenido -->
+<div class="content-column" id="inflacion">
+    <h2>Inflación</h2>
+    <p>La inflación es uno de los conceptos económicos más importantes y se refiere al aumento generalizado y sostenido de los precios de los bienes y servicios en una economía durante un periodo prolongado. A medida que los precios suben, el valor de la moneda disminuye, lo que significa que las personas necesitan más dinero para adquirir los mismos productos y servicios.</p>
+    <p>Existen diferentes tipos de inflación. La inflación moderada es vista generalmente como una señal de una economía en expansión, donde hay un aumento en la demanda de bienes y servicios, lo que lleva a un aumento de los precios.</p>
+    <p>Por otro lado, la inflación también puede ser causada por factores externos, como un aumento en los precios de las materias primas, como el petróleo o los alimentos, lo que puede elevar el costo de producción de bienes y servicios.</p>
+    <hr>
+    <p>Un caso extremo de inflación es la hiperinflación, un fenómeno en el que los precios aumentan a un ritmo extremadamente rápido, lo que puede llevar a la ruptura total de la economía de un país.</p>
+</div>
+
+<!-- Columna de video -->
+<div class="video-column">
+    <iframe src="https://www.youtube.com/embed/7o-Fjt1kJ_U" title="Video sobre Inflación"></iframe>
+    <div class="video-description">
+        <p>Este video analiza las causas y efectos de la inflación, así como las estrategias que los gobiernos y bancos centrales implementan para mitigar sus impactos.</p>
+    </div>
+</div>
+
+<!-- Columna de contenido -->
+<div class="content-column" id="globalizacion">
+    <h2>Globalización</h2>
+    <p>La globalización es el proceso mediante el cual los países y las economías del mundo se conectan y se hacen más interdependientes a través del comercio, las inversiones y el flujo de información.</p>
+    <p>La globalización también ha aumentado la interconexión entre los mercados financieros de diferentes países. Lo que ocurre en un país puede tener repercusiones en otros, como se evidenció durante la crisis financiera de 2008.</p>
+    <hr>
+    <p>La globalización ha dado lugar a la creación de organismos internacionales como la OMC y el FMI, los cuales supervisan y regulan el comercio y las finanzas internacionales.</p>
+</div>
+
+<!-- Columna de video -->
+<div class="video-column">
+    <iframe src="https://www.youtube.com/embed/LdEW5IUQ1jw" title="Video sobre Globalización"></iframe>
+    <div class="video-description">
+        <p>En este video se aborda cómo la globalización ha transformado los mercados financieros y la manera en que los países interactúan en el escenario económico internacional.</p>
+    </div>
+</div>
+
+<!-- Columna de contenido -->
+<div class="content-column" id="tecnologia">
+    <h2>Tecnología Financiera</h2>
+    <p>La tecnología financiera, o fintech, está revolucionando el sector bancario y financiero a través de la implementación de nuevas tecnologías, como el blockchain, la inteligencia artificial (IA), y las plataformas de pagos móviles.</p>
+    <p>Las criptomonedas, como Bitcoin y Ethereum, son un claro ejemplo de cómo la tecnología está transformando la forma en que percibimos el dinero y las transacciones.</p>
+    <p>Además, la inteligencia artificial está desempeñando un papel crucial en el análisis de grandes cantidades de datos financieros, permitiendo que las instituciones financieras tomen decisiones más informadas y personalizadas.</p>
+    <hr>
+    <p>La tecnología financiera también ha facilitado la inclusión financiera al ofrecer servicios que permiten a personas no bancarizadas realizar transacciones financieras, ahorrar dinero o acceder a créditos de manera sencilla y rápida.</p>
+</div>
+
+<!-- Columna de video -->
+<div class="video-column" style="display: flex; flex-direction: column; align-items: center; max-width: 100%;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/YDnnIO-Sdts" title="Video sobre Tecnología Financiera" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="video-description" style="margin-top: 10px; text-align: center;">
+        <p>Este video explora cómo la tecnología está revolucionando el panorama financiero, con un enfoque en criptomonedas, blockchain y pagos digitales.</p>
+    </div>
+</div>
+
+
+            </div>
+        </div>
+    </main>
+    
+
+    
+    <footer>
+        <p>&copy; 2024 Economía Mundial. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Verificar si hay elementos del fondo que puedan estar bloqueados
+        document.body.style.background = "transparent";
+        
+        // Configuración del canvas
+        const canvas = document.createElement('canvas');
+        document.body.appendChild(canvas);
+        const ctx = canvas.getContext('2d');
+
+        // Tamaño de la cuadrícula
+        const cellSize = 10; // Tamaño de cada celda
+        const gridWidth = Math.floor(window.innerWidth / cellSize);
+        const gridHeight = Math.floor(window.innerHeight / cellSize);
+        let grid = [];
+
+        // Inicializa la cuadrícula con valores aleatorios
+        function initializeGrid() {
+            grid = Array.from({ length: gridHeight }, () =>
+                Array.from({ length: gridWidth }, () => Math.random() > 0.8 ? 1 : 0)
+            );
+        }
+
+        // Calcula el siguiente estado de la cuadrícula
+        function nextGeneration() {
+            const nextGrid = grid.map((row, y) =>
+                row.map((cell, x) => {
+                    const neighbors = countNeighbors(x, y);
+                    if (cell === 1 && (neighbors < 2 || neighbors > 3)) return 0; // Muere
+                    if (cell === 0 && neighbors === 3) return 1; // Nace
+                    return cell; // Se mantiene
+                })
+            );
+            grid = nextGrid;
+        }
+
+        // Cuenta los vecinos vivos de una celda
+        function countNeighbors(x, y) {
+            let count = 0;
+            for (let dx = -1; dx <= 1; dx++) {
+                for (let dy = -1; dy <= 1; dy++) {
+                    if (dx === 0 && dy === 0) continue; // Ignora la celda misma
+                    const nx = (x + dx + gridWidth) % gridWidth; // Borde toroidal
+                    const ny = (y + dy + gridHeight) % gridHeight;
+                    count += grid[ny][nx];
+                }
+            }
+            return count;
+        }
+
+        // Dibuja la cuadrícula en el canvas
+        function drawGrid() {
+            ctx.fillStyle = "black";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = "white";
+            for (let y = 0; y < gridHeight; y++) {
+                for (let x = 0; x < gridWidth; x++) {
+                    if (grid[y][x] === 1) {
+                        ctx.fillRect(x * cellSize, y * cellSize, cellSize, cellSize);
+                    }
+                }
+            }
+        }
+
+        // Ajusta el tamaño del canvas
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            initializeGrid();
+        }
+        window.addEventListener('resize', resizeCanvas);
+
+        // Inicialización y ciclo de actualización
+        function animate() {
+            nextGeneration();
+            drawGrid();
+            requestAnimationFrame(animate);
+        }
+
+        resizeCanvas();
+        animate();
+    </script>
+</body>
+</html>
