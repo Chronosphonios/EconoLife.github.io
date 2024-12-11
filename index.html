@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Economía Mundial</title>
-    <link rel="stylesheet" href="Styles.css"> <!-- Enlace al archivo styles.css -->
+    <link rel="stylesheet" href="Styles.css">
 </head>
 
 
@@ -23,7 +23,6 @@
     
     <main>
         <div class="content-wrapper">
- <!-- Columna de video -->
 <div class="video-column">
     <iframe src="https://www.youtube.com/embed/y1DlkFThI3Q" title="Video sobre Bancos Centrales"></iframe>
     <div class="video-description">
@@ -31,7 +30,6 @@
     </div>
 </div>
 
-<!-- Columna de contenido -->
 <div class="content-column" id="inflacion">
     <h2>Inflación</h2>
     <p>La inflación es uno de los conceptos económicos más importantes y se refiere al aumento generalizado y sostenido de los precios de los bienes y servicios en una economía durante un periodo prolongado. A medida que los precios suben, el valor de la moneda disminuye, lo que significa que las personas necesitan más dinero para adquirir los mismos productos y servicios.</p>
@@ -41,7 +39,6 @@
     <p>Un caso extremo de inflación es la hiperinflación, un fenómeno en el que los precios aumentan a un ritmo extremadamente rápido, lo que puede llevar a la ruptura total de la economía de un país.</p>
 </div>
 
-<!-- Columna de video -->
 <div class="video-column">
     <iframe src="https://www.youtube.com/embed/7o-Fjt1kJ_U" title="Video sobre Inflación"></iframe>
     <div class="video-description">
@@ -49,7 +46,6 @@
     </div>
 </div>
 
-<!-- Columna de contenido -->
 <div class="content-column" id="globalizacion">
     <h2>Globalización</h2>
     <p>La globalización es el proceso mediante el cual los países y las economías del mundo se conectan y se hacen más interdependientes a través del comercio, las inversiones y el flujo de información.</p>
@@ -58,7 +54,6 @@
     <p>La globalización ha dado lugar a la creación de organismos internacionales como la OMC y el FMI, los cuales supervisan y regulan el comercio y las finanzas internacionales.</p>
 </div>
 
-<!-- Columna de video -->
 <div class="video-column">
     <iframe src="https://www.youtube.com/embed/LdEW5IUQ1jw" title="Video sobre Globalización"></iframe>
     <div class="video-description">
@@ -66,7 +61,6 @@
     </div>
 </div>
 
-<!-- Columna de contenido -->
 <div class="content-column" id="tecnologia">
     <h2>Tecnología Financiera</h2>
     <p>La tecnología financiera, o fintech, está revolucionando el sector bancario y financiero a través de la implementación de nuevas tecnologías, como el blockchain, la inteligencia artificial (IA), y las plataformas de pagos móviles.</p>
@@ -76,7 +70,6 @@
     <p>La tecnología financiera también ha facilitado la inclusión financiera al ofrecer servicios que permiten a personas no bancarizadas realizar transacciones financieras, ahorrar dinero o acceder a créditos de manera sencilla y rápida.</p>
 </div>
 
-<!-- Columna de video -->
 <div class="video-column" style="display: flex; flex-direction: column; align-items: center; max-width: 100%;">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/YDnnIO-Sdts" title="Video sobre Tecnología Financiera" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <div class="video-description" style="margin-top: 10px; text-align: center;">
@@ -96,47 +89,41 @@
     </footer>
 
     <script>
-        // Verificar si hay elementos del fondo que puedan estar bloqueados
         document.body.style.background = "transparent";
         
-        // Configuración del canvas
         const canvas = document.createElement('canvas');
         document.body.appendChild(canvas);
         const ctx = canvas.getContext('2d');
 
-        // Tamaño de la cuadrícula
-        const cellSize = 10; // Tamaño de cada celda
+        const cellSize = 10; 
         const gridWidth = Math.floor(window.innerWidth / cellSize);
         const gridHeight = Math.floor(window.innerHeight / cellSize);
         let grid = [];
 
-        // Inicializa la cuadrícula con valores aleatorios
         function initializeGrid() {
             grid = Array.from({ length: gridHeight }, () =>
                 Array.from({ length: gridWidth }, () => Math.random() > 0.8 ? 1 : 0)
             );
         }
 
-        // Calcula el siguiente estado de la cuadrícula
         function nextGeneration() {
             const nextGrid = grid.map((row, y) =>
                 row.map((cell, x) => {
                     const neighbors = countNeighbors(x, y);
-                    if (cell === 1 && (neighbors < 2 || neighbors > 3)) return 0; // Muere
-                    if (cell === 0 && neighbors === 3) return 1; // Nace
-                    return cell; // Se mantiene
+                    if (cell === 1 && (neighbors < 2 || neighbors > 3)) return 0;
+                    if (cell === 0 && neighbors === 3) return 1;
+                    return cell;
                 })
             );
             grid = nextGrid;
         }
 
-        // Cuenta los vecinos vivos de una celda
         function countNeighbors(x, y) {
             let count = 0;
             for (let dx = -1; dx <= 1; dx++) {
                 for (let dy = -1; dy <= 1; dy++) {
-                    if (dx === 0 && dy === 0) continue; // Ignora la celda misma
-                    const nx = (x + dx + gridWidth) % gridWidth; // Borde toroidal
+                    if (dx === 0 && dy === 0) continue; 
+                    const nx = (x + dx + gridWidth) % gridWidth; 
                     const ny = (y + dy + gridHeight) % gridHeight;
                     count += grid[ny][nx];
                 }
@@ -144,7 +131,6 @@
             return count;
         }
 
-        // Dibuja la cuadrícula en el canvas
         function drawGrid() {
             ctx.fillStyle = "black";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -159,7 +145,6 @@
             }
         }
 
-        // Ajusta el tamaño del canvas
         function resizeCanvas() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
@@ -167,7 +152,6 @@
         }
         window.addEventListener('resize', resizeCanvas);
 
-        // Inicialización y ciclo de actualización
         function animate() {
             nextGeneration();
             drawGrid();
